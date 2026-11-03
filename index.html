@@ -1056,10 +1056,10 @@ function showPage(id, btn) {
 
 // ── DASHBOARD ──────────────────────────────────────────────
 function renderDashboard() {
-  renderCountdowns();
-  renderBlockStats();
-  renderThisWeek();
-  renderMiniChart();
+  try { renderCountdowns(); } catch(e) { document.getElementById('countdowns').innerHTML = '<div style="color:red;font-size:11px">ERR: '+e.message+'</div>'; }
+  try { renderBlockStats(); } catch(e) { document.getElementById('block-stats').innerHTML = '<div style="color:red;font-size:11px">ERR: '+e.message+'</div>'; }
+  try { renderThisWeek(); } catch(e) { document.getElementById('this-week-grid').innerHTML = '<div style="color:red;font-size:11px">ERR: '+e.message+'</div>'; }
+  try { renderMiniChart(); } catch(e) { console.error('miniChart',e); }
 }
 
 function renderCountdowns() {
