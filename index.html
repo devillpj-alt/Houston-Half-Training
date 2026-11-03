@@ -1140,11 +1140,11 @@ function renderThisWeek() {
 
   const noLift = wk >= LAST_LIFT_WEEK;
   const days = [
-    { label: 'MON', type: 'circuit', name: noLift ? 'Rest',   key: `w${wk}c0` },
+   { label: 'MON', type: 'circuit', name: noLift ? 'Rest' : 'Circuit C1', key: `w${wk}c0` },
     { label: 'TUE', type: 'run',     name: 'Easy Run',        key: `run_w${wk}_tue` },
-    { label: 'WED', type: 'circuit', name: noLift ? 'Rest',   key: `w${wk}c1` },
+   { label: 'WED', type: 'circuit', name: noLift ? 'Rest' : 'Circuit C2', key: `w${wk}c1` },
     { label: 'THU', type: 'run',     name: 'Run',             key: `run_w${wk}_thu` },
-    { label: 'FRI', type: 'circuit', name: noLift ? 'Rest',   key: `w${wk}c2` },
+    { label: 'FRI', type: 'circuit', name: noLift ? 'Rest' : 'Circuit C3', key: `w${wk}c2` },
     { label: 'SAT', type: 'run',     name: 'Long Run',        key: `run_w${wk}_sat` },
   ];
 
