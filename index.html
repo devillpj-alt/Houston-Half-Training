@@ -886,15 +886,15 @@ const CIRCUITS = [
 
 // ── RUNS ───────────────────────────────────────────────────
 // 10 weeks: Nov 9 – Jan 17
-// Pacing: Easy ~10:30–11:00/mi · HM pace 9:09/mi
+// Pacing: Easy ~9:45–10:15/mi · HM pace 9:09/mi
 const RUNS = [
   {
     wk: 1, label: 'Week 1 — Return to Running',
     phase: 'return',
     notes: 'First miles back after Achilles recovery. Keep it very easy — you\'re testing the legs, not training yet. Listen to any Achilles feedback.',
-    tue: '3 mi easy · ~10:45–11:00/mi · Achilles check-in',
+    tue: '3 mi easy · run by feel · Achilles check-in, not a pace run',
     thu: '3 mi easy · Zone 2 · flat route',
-    sat: '4 mi easy · 10:30–11:00/mi',
+    sat: '4 mi easy · run by feel · ~9:45–10:15/mi if Achilles cooperates',
     total: '10 mi',
   },
   {
@@ -903,7 +903,7 @@ const RUNS = [
     notes: 'Second week back. Add a small taste of race pace at the end of Thursday.',
     tue: '3 mi easy · ~10:45/mi',
     thu: '4 mi · last 1 mi @ HM pace (9:09/mi)',
-    sat: '6 mi easy · 10:30–11:00/mi',
+    sat: '6 mi easy · 9:45–10:15/mi',
     total: '13 mi',
   },
   {
@@ -912,7 +912,7 @@ const RUNS = [
     notes: 'Turkey Trot week. Thursday IS the Turkey Trot (5K). Use it as a quality effort — not all-out, but working.',
     tue: '4 mi easy · Zone 2',
     thu: '🦃 Turkey Trot · Thu Nov 26 · run strong, not all-out',
-    sat: '8 mi easy · 10:30–11:00/mi',
+    sat: '8 mi easy · 9:45–10:15/mi',
     total: '~16 mi',
   },
   {
@@ -921,7 +921,7 @@ const RUNS = [
     notes: 'Solid base week. Two miles at HM pace on Thursday to start ingraining the target effort.',
     tue: '4 mi easy · Zone 2',
     thu: '5 mi · 2 mi @ HM pace (9:09/mi)',
-    sat: '8 mi easy · 10:30–11:00/mi',
+    sat: '8 mi easy · 9:45–10:15/mi',
     total: '17 mi',
   },
   {
@@ -930,7 +930,7 @@ const RUNS = [
     notes: 'Long run hits double digits for the first time. Keep it easy — this is aerobic building, not racing.',
     tue: '4 mi easy · Zone 2',
     thu: '5 mi · 2.5 mi @ HM pace (9:09/mi)',
-    sat: '10 mi easy · 10:30–11:00/mi',
+    sat: '10 mi easy · 9:45–10:15/mi',
     total: '19 mi',
   },
   {
@@ -939,7 +939,7 @@ const RUNS = [
     notes: 'Moving into the build phase. Thursday quality increases. Long run creeping toward race distance.',
     tue: '4 mi easy · Zone 2',
     thu: '6 mi · 3 mi @ HM pace (9:09/mi)',
-    sat: '11 mi easy · 10:30–11:00/mi',
+    sat: '11 mi easy · 9:45–10:15/mi',
     total: '21 mi',
   },
   {
@@ -948,7 +948,7 @@ const RUNS = [
     notes: 'Holiday week — keep the mileage down, stay consistent, stay fresh. Easy runs only.',
     tue: '4 mi easy · Zone 2',
     thu: '4 mi easy · no quality',
-    sat: '7 mi easy · 10:30–11:00/mi',
+    sat: '7 mi easy · 9:45–10:15/mi',
     total: '15 mi',
   },
   {
@@ -957,7 +957,7 @@ const RUNS = [
     notes: 'Peak week. 13 miles on Saturday is your over-distance long run — the confidence builder. Run it easy.',
     tue: '4 mi easy · Zone 2',
     thu: '5 mi · 2 mi @ HM pace (9:09/mi)',
-    sat: '13 mi easy · 10:30–11:00/mi 🏔',
+    sat: '13 mi easy · 9:45–10:15/mi 🏔',
     total: '22 mi',
   },
   {
@@ -1447,7 +1447,7 @@ function renderRuns() {
       <div class="race-detail">
         Saturday · January 17, 2027<br>
         Goal: Sub-2:00 · Target pace: 9:09/mi<br>
-        Easy miles: ~10:30–11:00/mi
+        Easy miles: ~9:45–10:15/mi
       </div>
     </div>`;
   } else {
@@ -1462,7 +1462,7 @@ function renderRuns() {
   }
 
   html += `<div style="padding:8px 0;text-align:right">
-    <span style="font-size:11px;color:var(--text3);">Weekly target: ${r.total} · Easy: 10:30–11:00/mi · HM pace: 9:09/mi</span>
+    <span style="font-size:11px;color:var(--text3);">Weekly target: ${r.total} · Easy: 9:45–10:15/mi · HM pace: 9:09/mi</span>
   </div>`;
 
   document.getElementById('runs-content').innerHTML = html;
