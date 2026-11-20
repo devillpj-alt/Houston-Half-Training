@@ -1,17 +1,14 @@
-const CACHE = 'houston-hm-v1';
+const CACHE = 'houston-hm-v2';
 const ASSETS = [
   './',
   './index.html',
   './manifest.json',
   './icon-192.png',
   './icon-512.png',
-  'https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap',
 ];
 
 self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(ASSETS)).catch(() => {})
-  );
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)).catch(() => {}));
   self.skipWaiting();
 });
 
@@ -24,18 +21,16 @@ self.addEventListener('activate', e => {
   self.clients.claim();
 });
 
+// Network first: always try for the latest version, fall back to cache when offline
 self.addEventListener('fetch', e => {
   if (e.request.method !== 'GET') return;
   e.respondWith(
-    caches.match(e.request).then(cached => {
-      if (cached) return cached;
-      return fetch(e.request).then(resp => {
-        if (resp && resp.status === 200 && resp.type !== 'opaque') {
-          const copy = resp.clone();
-          caches.open(CACHE).then(c => c.put(e.request, copy));
-        }
-        return resp;
-      }).catch(() => cached);
-    })
+    fetch(e.request).then(resp => {
+      if (resp && resp.status === 200 && resp.type !== 'opaque') {
+        const copy = resp.clone();
+        caches.open(CACHE).then(c => c.put(e.request, copy));
+      }
+      return resp;
+    }).catch(() => caches.match(e.request))
   );
 });
