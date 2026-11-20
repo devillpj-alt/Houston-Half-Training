@@ -1254,7 +1254,7 @@ function drawWeightChart(canvas, mini) {
   });
   ctx.lineTo(xForIdx(log.length - 1), H - pad.b);
   ctx.lineTo(xForIdx(0), H - pad.b);
-  ctx.closePath();
+  ctx.Path();
   ctx.fillStyle = grad;
   ctx.fill();
 
@@ -1522,7 +1522,7 @@ function renderWeightHistory() {
   const entries = [...S.weightLog].reverse();
   el.innerHTML = entries.map((e, ri) => {
     const i   = S.weightLog.length - 1 - ri;
-    const cls = e.weight <= WEIGHT_GOAL ? 'at-goal' : (e.weight <= WEIGHT_GOAL + 5 ? 'close' : 'over');
+    const cls = e.weight <= WEIGHT_GOAL ? 'at-goal' : (e.weight <= WEIGHT_GOAL + 5 ? '' : 'over');
     const delta = ri < entries.length - 1
       ? (e.weight - entries[ri+1].weight).toFixed(1)
       : null;
